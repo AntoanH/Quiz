@@ -1,4 +1,4 @@
-package datamodel;
+package datamodel.answer;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -109,6 +109,7 @@ public class AssociativeAnswer extends Answer<Map<String,String>> {
 	 */
 	@Override
 	public void displayCorrectAnswer() {
+		System.out.println("The correct answer is: ");
 		for (String k : this.answerValue.keySet()) {
 			System.out.println(k + "->" +this.answerValue.get(k));
 		}

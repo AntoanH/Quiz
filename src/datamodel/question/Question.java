@@ -1,7 +1,9 @@
-package datamodel;
+package datamodel.question;
+
+import datamodel.answer.Answer;
+
 /**
  * @author Antoan Hristov and Patrick Wakil
- * @date 2018-02-19
  * Question object is constituted of its content and answer part
  */
 public abstract class Question {
@@ -42,7 +44,7 @@ public abstract class Question {
 
 	/**
 	 * Set Answer object according to type of Question
-	 * @param the answer
+	 * @param answer the answer
 	 */
 	public void setAnswer(Answer<?> answer) {
 		this.answer = answer;
@@ -74,7 +76,7 @@ public abstract class Question {
 
 	/**
 	 * Set difficulty for question
-	 * @param the difficulty wanted
+	 * @param difficulty the difficulty wanted
 	 */
 	public void setDifficulty(int difficulty) {
 		this.difficulty = difficulty;

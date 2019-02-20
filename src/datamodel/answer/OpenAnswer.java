@@ -1,4 +1,4 @@
-package datamodel;
+package datamodel.answer;
 
 public class OpenAnswer extends Answer<String> {
 
@@ -33,12 +33,12 @@ public class OpenAnswer extends Answer<String> {
 
 	/**
 	 * Valid value for this type of answer is whether it contains characters
-	 * @param providedAnswer the answer to be verified if it is correct
+	 * @param answer the answer to be verified if it is correct
 	 * @return true if answer is valid according to OpenAnswer or false otherwise
 	 */
 	@Override
 	public boolean isValid(String answer) {
-		return answer.matches("[a-z|A-Z]+");
+		return answer.matches("[a-z|A-Z|\\s]+");
 	}
 
 	/**
@@ -63,7 +63,7 @@ public class OpenAnswer extends Answer<String> {
 	 */
 	@Override
 	public void displayCorrectAnswer() {
-		System.out.println(this.answerValue);
+		System.out.println("The correct answer is: " +this.answerValue);
 	}
 
 }

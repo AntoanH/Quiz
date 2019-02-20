@@ -13,7 +13,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import datamodel.Question;
+import datamodel.question.Question;
 import factory.QuestionFactory;
 
 public class QuestionJDBCDAO {

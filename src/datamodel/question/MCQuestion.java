@@ -1,4 +1,7 @@
-package datamodel;
+package datamodel.question;
+
+import datamodel.answer.Answer;
+import datamodel.answer.MCAnswer;
 
 public class MCQuestion extends Question {
 
@@ -30,7 +33,9 @@ public class MCQuestion extends Question {
 	@Override
 	public void display() {
 		System.out.println(this.description);
-		System.out.println(this.extraContent);
+		if (!(this.extraContent == null)) {
+			System.out.println(this.extraContent);	
+		}
 		this.answer.displayAnswers();
 	}
 

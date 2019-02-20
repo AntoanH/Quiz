@@ -1,4 +1,7 @@
-package datamodel;
+package datamodel.question;
+
+import datamodel.answer.Answer;
+import datamodel.answer.OpenAnswer;
 
 public class OpenQuestion extends Question {
 
@@ -39,8 +42,12 @@ public class OpenQuestion extends Question {
 	@Override
 	public void display() {
 		System.out.println(this.description);
-		System.out.println(this.extraContent);
-		System.out.println(this.hint);
+		if (!(this.extraContent == null)) {
+			System.out.println(this.extraContent);	
+		}
+		if (!(this.hint == null) ) {
+			System.out.println(this.hint);	
+		}
 		this.answer.displayAnswers();
 	}
 

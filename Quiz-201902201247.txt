@@ -1,0 +1,19 @@
+-----------------------------------------
+Question1:
+If method have same name as class name and method don’t have any return type then it is known as
+Hint: Cons_______
+Open answer (enter your value)
+-----------------------------------------
+Question2:
+ Inheritance means
+Hint: Sub class _______ _____ class
+Open answer (enter your value)
+-----------------------------------------
+Question3:
+String is the predefined
+Open answer (enter your value)
+-----------------------------------------
+Question4:
+Execution of program always begins with
+Hint: M___ m_____
+Open answer (enter your value)

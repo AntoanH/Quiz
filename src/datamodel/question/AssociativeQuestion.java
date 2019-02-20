@@ -1,4 +1,7 @@
-package datamodel;
+package datamodel.question;
+
+import datamodel.answer.Answer;
+import datamodel.answer.AssociativeAnswer;
 
 public class AssociativeQuestion extends Question {
 

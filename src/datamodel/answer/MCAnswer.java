@@ -1,4 +1,4 @@
-package datamodel;
+package datamodel.answer;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -69,7 +69,7 @@ public class MCAnswer extends Answer<List<Map<String,String>>> {
 	public String usage() {
 		return "Multiple choice answer (1 or more choices are correct)\n"
 				+ "Example (only one correct): 1\n"
-				+ "Example (two correct): 1 3\n";
+				+ "Example (two correct): 1 3";
 	}
 
 	/**
@@ -89,10 +89,11 @@ public class MCAnswer extends Answer<List<Map<String,String>>> {
 	 */
 	@Override
 	public void displayCorrectAnswer() {
+		System.out.printf("The correct answer is: ");
 		for (Map<String,String> m : this.answerValue) {
 			String v = m.get("value");
 			if(v.equals("true")) {
-				System.out.println(v);
+				System.out.println(m.get("description") + ' ');
 			}
 		}
 	}

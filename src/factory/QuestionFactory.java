@@ -9,11 +9,11 @@ import java.lang.reflect.Constructor;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import datamodel.Answer;
-import datamodel.AssociativeQuestion;
-import datamodel.MCQuestion;
-import datamodel.OpenQuestion;
-import datamodel.Question;
+import datamodel.answer.Answer;
+import datamodel.question.AssociativeQuestion;
+import datamodel.question.MCQuestion;
+import datamodel.question.OpenQuestion;
+import datamodel.question.Question;
 
 
 public class QuestionFactory {

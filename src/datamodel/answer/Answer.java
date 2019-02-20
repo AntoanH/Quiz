@@ -1,7 +1,6 @@
-package datamodel;
+package datamodel.answer;
 /**
  * @author Antoan Hristov and Patrick Wakil
- * @date 2018-02-19
  * This  generic class represents an Answer. The type of the answer value is generic. 
  * @param <T> The type of the value of the answer
  */
@@ -43,7 +42,7 @@ public abstract class Answer<T> {
 	
 	/**
 	 * Return true if providedAnswer is correct  
-	 * @param answer is the answer  String to test
+	 * @param providedAnswer is the answer  String to test
 	 * @return true if answer is correct to this Answer or false otherwise
 	 */
 	public abstract boolean isCorrect(String providedAnswer);

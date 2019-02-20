@@ -3,14 +3,15 @@ package launcher;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
+import java.text.MessageFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
-import datamodel.Answer;
-import datamodel.Question;
+import datamodel.answer.Answer;
+import datamodel.question.Question;
 import services.QuestionJDBCDAO;
 
 public class Quiz {
@@ -55,6 +56,7 @@ public class Quiz {
 	public void askAll() throws FileNotFoundException {
 		int i=1;
 		String streamAnswer;
+		int nbCorrect=0;
 		for (Question q : this.questions){
 			System.out.println("-----------------------------------------");
 			System.out.println("Question" +i++ + ":");
@@ -62,12 +64,17 @@ public class Quiz {
 			Answer<?> answer = q.getAnswer();
 			streamAnswer = this.verifyAnswerSyntax(answer);
 			if(answer.isCorrect(streamAnswer)){
-				System.out.println("correct");
+				System.out.println("Correct");
+				nbCorrect+=1;
 			}
 			else{
-				String response = "You provided incorrect answer: " + streamAnswer;
+				System.out.print("Incorrect: ");
+				answer.displayCorrectAnswer();
 			}
 		}
+		System.out.println("Congratulations you finished the quiz!");
+		double percent = ((double) nbCorrect/this.questions.size() * 100);
+		System.out.println(MessageFormat.format("{0}/{1}({2}%)", nbCorrect, this.questions.size(),percent));
 		System.out.println("Do you want to export the quiz (yes/no): ");
 		streamAnswer = scanner.nextLine();
 		if (streamAnswer.equals("yes")) {
@@ -75,6 +82,10 @@ public class Quiz {
 		}
 	}
 	
+	/**
+	 * Method which export quiz to a file with current date to the root of project.
+	 * @throws FileNotFoundException 
+	 */
 	public void export() throws FileNotFoundException {
 		// filename curr datetime
 		String fileName = new SimpleDateFormat("yyyyMMddHHmm'.txt'").format(new Date());
